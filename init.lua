@@ -10,23 +10,20 @@
 vim.g.mapleader = " "
 vim.g.maplocalleader = " "
 
+-- run lazy (and lazy is running the plugins)
+require("lazy.init")
+
 -- run the options
-require("options.options")()
+require("options.options")
 
 -- run the keys
-require("keys.global")()
-require("keys.normal")()
-require("keys.insert")()
-require("keys.visual")()
-require("keys.visual_block")()
-require("keys.command")()
-require("keys.terminal")()
+require("keys.global")
+require("keys.normal")
+require("keys.insert")
+require("keys.visual")
+require("keys.visual_block")
+require("keys.command")
+require("keys.terminal")
 
 -- run Autocommands
-require("options.autoCommands")()
-
--- run lazy install
-require("plugins.installLazy")()
-
--- run lazy (and lazy is runnig the plugins)
-require("plugins.lazy")()
+require("options.autoCommands")
