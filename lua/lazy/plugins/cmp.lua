@@ -56,7 +56,7 @@ return { -- Autocompletion
 			Operator = "   (Operator)",
 			TypeParameter = "   (TypeParameter)",
 			Copilot = " (Copilot)",
-			Codeium = " (Codeium)",
+			Codeium = " (Codeium)",
 			DB = "󰆼 (DataBase)",
 		}
 
