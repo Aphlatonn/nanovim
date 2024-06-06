@@ -7,8 +7,10 @@
 -- Set <space> as the leader key
 -- See `:help mapleader`
 --  NOTE: Must happen before plugins are loaded (otherwise wrong leader will be used)
+--  leader key
 vim.g.mapleader = " "
-vim.g.maplocalleader = " "
+-- second leader key
+vim.g.maplocalleader = vim.api.nvim_replace_termcodes("<BS>", false, false, true)
 
 -- run lazy (and lazy is running the plugins)
 require("lazy.init")
