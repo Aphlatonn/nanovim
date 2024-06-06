@@ -28,9 +28,6 @@ vim.opt.showmode = true
 -- Enable break indent
 vim.opt.breakindent = true
 
--- Save undo history
-vim.opt.undofile = true
-
 -- Case-insensitive searching UNLESS \C or one or more capital letters in the search term
 vim.opt.ignorecase = true
 vim.opt.smartcase = true
@@ -60,6 +57,7 @@ vim.opt.inccommand = "split"
 
 -- Show which line your cursor is on
 vim.opt.cursorline = true
+vim.opt.cursorcolumn = true
 
 -- Minimal number of screen lines to keep above and below the cursor.
 vim.opt.scrolloff = 10
@@ -70,8 +68,7 @@ vim.opt.hlsearch = true
 -- set the one status line when opening splits
 vim.opt.laststatus = 3
 
---------------------
-
+-- Set the tab width
 vim.opt.tabstop = 4
 vim.opt.softtabstop = 4
 vim.opt.shiftwidth = 4
@@ -97,14 +94,8 @@ vim.opt.incsearch = true
 -- Enable 24-bit RGB color in the TUI
 vim.opt.termguicolors = true
 
--- Enable scroll offset
-vim.opt.scrolloff = 8
-
--- vim.opt.signcolumn = "yes"
-vim.opt.signcolumn = "yes"
-
--- Set the update time
-vim.opt.updatetime = 50
-
 -- Set the color column
-vim.opt.colorcolumn = "90"
+-- vim.opt.colorcolumn = "90"
+
+-- remove the commands input place
+vim.opt.cmdheight = 0
