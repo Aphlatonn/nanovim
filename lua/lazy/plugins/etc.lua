@@ -13,17 +13,6 @@ return {
 		"mbbill/undotree",
 	},
 
-	{ -- leap.nvim
-		"ggandor/leap.nvim",
-		-- options
-		init = function()
-			require("leap").add_default_mappings()
-		end,
-		-- Optional dependencies
-		dependencies = { "tpope/vim-repeat" },
-		lazy = false,
-	},
-
 	{ -- auto pairs
 		"windwp/nvim-autopairs",
 		event = "InsertEnter",
