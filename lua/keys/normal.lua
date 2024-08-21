@@ -3,6 +3,7 @@ local key = function(key, commands, desc)
 end
 
 ------------------------------------------------------------------------------
+
 -- HEAD: remove the highlighting from the search mode
 key("<Esc>", "<cmd>nohlsearch<CR>")
 
@@ -43,63 +44,6 @@ key("<leader>q", vim.diagnostic.setloclist, "Open diagnostic Quickfix list")
 key("[q", "<cmd>cnext<CR>", "Go next on Quick fix list")
 key("]q", "<cmd>cprev<CR>", "Go previous on Quick fix list ")
 
--- HEAD: trouble
-key("<leader>xx", function()
-	require("trouble").toggle()
-end, "Open trouble menu")
-
-key("<leader>xw", function()
-	require("trouble").toggle("workspace_diagnostics")
-end, "Trouble workspace diagnostics")
-
-key("<leader>xd", function()
-	require("trouble").toggle("document_diagnostics")
-end, "Trouble document diagnostics")
-
-key("<leader>xq", function()
-	require("trouble").toggle("quickfix")
-end, "Trouble quickfix")
-
-key("<leader>xl", function()
-	require("trouble").toggle("loclist")
-end, "Trouble loclist")
-
-key("<leader>xn", function()
-	require("trouble").next({ skip_groups = true, jump = true })
-end, "Trouble next")
-
-key("<leader>xb", function()
-	require("trouble").previous({ skip_groups = true, jump = true })
-end, "Trouble previous")
-
-key("gR", function()
-	require("trouble").toggle("lsp_references")
-end, "Trouble lsp references")
-
--- HEAD: harpoon key maps
--- Set up a key mapping to add a file mark in Harpoon
-key("ha", function()
-	require("harpoon.mark").add_file()
-end, "Harpoon mark")
-
--- Set up a key mapping to navigate to the next mark in Harpoon
-key("hn", function()
-	require("harpoon.ui").nav_next()
-end, "Harpoon next")
-
--- Set up a key mapping to navigate to the previous mark in Harpoon
-key("hp", function()
-	require("harpoon.ui").nav_prev()
-end, "Harpoon previous")
-
--- Set up a key mapping to display Harpoon marks
-key("hm", function()
-	require("harpoon.ui").toggle_quick_menu()
-end, "Telescope Harpoon marks")
-
--- Set up a key mapping to use Telescope to display Harpoon marks
-key("<Leader>th", ":Telescope harpoon marks<CR>", "Telescope Harpoon marks")
-
 -- HEAD: redu with sift + u
 key("<S-u>", "<C-r>", "Just redu")
 
@@ -119,40 +63,6 @@ key("<C-h>", "<C-w><C-h>", "Move focus to the left window")
 key("<C-l>", "<C-w><C-l>", "Move focus to the right window")
 key("<C-j>", "<C-w><C-j>", "Move focus to the lower window")
 key("<C-k>", "<C-w><C-k>", "Move focus to the upper window")
-
--- HEAD: todo comments keymaps
-key("]t", function()
-	require("todo-comments").jump_next()
-end, "Next todo comment")
-
-key("[t", function()
-	require("todo-comments").jump_prev()
-end, "Previous todo comment")
-
-key("<Leader>tt", ":TodoTelescope<CR>", "Telescope todo marks")
--- HEAD: remove the highlighting from the search mode
-key("<Esc>", "<cmd>nohlsearch<CR>")
-
--- HEAD: Telescope
-key("<leader>t?", "<CMD>Telescope help_tags<CR>", "Search Help")
-key("<leader>tm", "<CMD>Telescope<CR>", "Search Select Telescope")
-key("<leader>tw", "<CMD>Telescope grep_string<CR>", "Search current Word")
-key("<leader>tg", "<CMD>Telescope live_grep<CR>", "Search by Grep")
-key("<leader>td", "<CMD>Telescope diagnostics<CR>", "Search Diagnostics")
-key("<leader>tr", "<CMD>Telescope resume<CR>", "Search Resume")
-key("<leader>t.", "<CMD>Telescope oldfiles<CR>", "Search Recent Files")
-key("<leader><leader>", "<CMD>Telescope buffers<CR>", "Find existing buffers")
-key("<leader>ff", "<CMD>Telescope find_files<CR>", "Search Files")
-
--- HEAD: Diagnostic keymaps
-key("[d", vim.diagnostic.goto_prev, "Go to previous Diagnostic message")
-key("]d", vim.diagnostic.goto_next, "Go to next Diagnostic message")
-key("<leader>e", vim.diagnostic.open_float, "Show diagnostic Error messages")
-key("<leader>q", vim.diagnostic.setloclist, "Open diagnostic Quickfix list")
-
--- HEAD: Key mappings for cycling through quickfix list
-key("[q", ":cnext<CR>", "Go next on Quick fix list")
-key("]q", ":cprev<CR>", "Go previous on Quick fix list ")
 
 -- HEAD: trouble
 key("<leader>xx", function()
@@ -186,50 +96,6 @@ end, "Trouble previous")
 key("gR", function()
 	require("trouble").toggle("lsp_references")
 end, "Trouble lsp references")
-
--- HEAD: harpoon key maps
--- Set up a key mapping to add a file mark in Harpoon
-key("ha", function()
-	require("harpoon.mark").add_file()
-end, "Harpoon mark")
-
--- Set up a key mapping to navigate to the next mark in Harpoon
-key("hn", function()
-	require("harpoon.ui").nav_next()
-end, "Harpoon next")
-
--- Set up a key mapping to navigate to the previous mark in Harpoon
-key("hp", function()
-	require("harpoon.ui").nav_prev()
-end, "Harpoon previous")
-
--- Set up a key mapping to display Harpoon marks
-key("hm", function()
-	require("harpoon.ui").toggle_quick_menu()
-end, "Telescope Harpoon marks")
-
--- Set up a key mapping to use Telescope to display Harpoon marks
-key("<Leader>th", ":Telescope harpoon marks<CR>", "Telescope Harpoon marks")
-
--- HEAD: redu with sift + u
-key("<S-u>", "<C-r>", "Just redu")
-
--- HEAD: buffer prev/next key maps
--- prev
-key("<leader>bb", ":bp<CR>", "Buffer Previous")
--- next
-key("<leader>bn", ":bn<CR>", "Buffer Next")
-
--- HEAD: bundo tree
-key("<leader>tu", "<cmd>UndotreeToggle<CR>", "Toggle Undotree")
-
--- HEAD: Keybinds to make split navigation easier.
---  Use CTRL+<hjkl> to switch between windows
---  See `:help wincmd` for a list of all window commands
-key("<C-h>", "<C-w><C-h>", "Move focus to the left window")
-key("<C-l>", "<C-w><C-l>", "Move focus to the right window")
-key("<C-j>", "<C-w><C-j>", "Move focus to the lower window")
-key("<C-k>", "<C-w><C-k>", "Move focus to the upper window")
 
 -- HEAD: todo comments keymaps
 key("]t", function()
