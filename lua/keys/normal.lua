@@ -49,9 +49,11 @@ key("<S-u>", "<C-r>", "Just redu")
 
 -- HEAD: buffer prev/next key maps
 -- prev
-key("<leader>bb", ":bp<CR>", "Buffer Previous")
+key("<leader>bb", "<cmd>bp<CR>", "Buffer Previous")
 -- next
-key("<leader>bn", ":bn<CR>", "Buffer Next")
+key("<leader>bn", "<cmd>bn<CR>", "Buffer Next")
+-- Recent
+key("t", "<cmd>b#<CR>", "Buffer Recent")
 
 -- HEAD: bundo tree
 key("<leader>tu", "<cmd>UndotreeToggle<CR>", "Toggle Undotree")
