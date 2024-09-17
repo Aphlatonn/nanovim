@@ -17,11 +17,6 @@ vim.opt.mouse = "i"
 -- Don't show the mode, since it's already in the status line
 vim.opt.showmode = true
 
--- Sync clipboard between OS and Neovim.
---  Remove this option if you want your OS clipboard to remain independent.
---  See `:help 'clipboard'`
-
--- /// Clip board thinks
 -- uncomment this line if you want to sync your vim clipboard with system clipboard
 -- vim.opt.clipboard = "unnamedplus"
 
@@ -50,7 +45,7 @@ vim.opt.splitbelow = true
 --  See `:help 'list'`
 --  and `:help 'listchars'`
 vim.opt.list = true
-vim.opt.listchars = { tab = "» ", trail = "·", nbsp = "␣" }
+vim.opt.listchars = { tab = "  ", trail = "·", nbsp = "␣" }
 
 -- Preview substitutions live, as you type!
 vim.opt.inccommand = "split"
@@ -66,7 +61,7 @@ vim.opt.scrolloff = 10
 vim.opt.hlsearch = true
 
 -- set the one status line when opening splits
-vim.opt.laststatus = 3
+-- vim.opt.laststatus = 3
 
 -- Set the tab width
 vim.opt.tabstop = 4
