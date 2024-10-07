@@ -63,15 +63,39 @@ key("<C-j>", "<C-w><C-j>", "Move focus to the lower window")
 key("<C-k>", "<C-w><C-k>", "Move focus to the upper window")
 
 -- HEAD: todo comments keymaps
+local todo = require("todo-comments")
 key("]t", function()
-	require("todo-comments").jump_next()
+	todo.jump_next()
 end, "Next todo comment")
 
 key("[t", function()
-	require("todo-comments").jump_prev()
+	todo.jump_prev()
 end, "Previous todo comment")
 
 -- HEAD: formatter keymaps
 key("<leader>F", function()
 	require("conform").format({ async = true, lsp_fallback = true })
 end, "Format buffer")
+
+-- HEAD: harpoon
+local harpoon = require("harpoon")
+key("<C-e>", function()
+	harpoon:list():add()
+end, "Add to harpoon")
+
+key("gh", function()
+	harpoon.ui:toggle_quick_menu(harpoon:list())
+end, "Toggle harpoon menu")
+
+key("g1", function()
+	harpoon:list():select(1)
+end, "Select harpoon 1")
+key("g2", function()
+	harpoon:list():select(2)
+end, "Select harpoon 2")
+key("3", function()
+	harpoon:list():select(3)
+end, "Select harpoon 3")
+key("4", function()
+	harpoon:list():select(4)
+end, "Select harpoon 4")

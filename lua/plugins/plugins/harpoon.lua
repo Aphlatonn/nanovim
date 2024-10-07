@@ -1,8 +1,7 @@
-return { -- harpoon.nvim
+return {
 	"ThePrimeagen/harpoon",
-	-- Dependencies
+	branch = "harpoon2",
 	dependencies = { "nvim-lua/plenary.nvim" },
-
 	-- Options
 	config = function()
 		require("harpoon").setup({
