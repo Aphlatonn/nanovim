@@ -70,3 +70,8 @@ end, "Next todo comment")
 key("[t", function()
 	require("todo-comments").jump_prev()
 end, "Previous todo comment")
+
+-- HEAD: formatter keymaps
+key("<leader>F", function()
+	require("conform").format({ async = true, lsp_fallback = true })
+end, "Format buffer")
