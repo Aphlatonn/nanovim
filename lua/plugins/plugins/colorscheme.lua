@@ -24,21 +24,17 @@ return {
 				},
 				theme = {
 					-- change specific usages for a certain theme, or for all of them
-					wave = {
+					wave = {},
+					dragon = {},
+					all = {
 						ui = {
 							float = {
 								bg = "none",
 							},
-						},
-					},
-					dragon = {
-						syn = {
-							parameter = "yellow",
-						},
-					},
-					all = {
-						ui = {
 							bg_gutter = "none",
+						},
+						syn = {
+							-- parameter = "yellow",
 						},
 					},
 				},
