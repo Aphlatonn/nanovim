@@ -61,7 +61,7 @@ vim.opt.scrolloff = 10
 vim.opt.hlsearch = true
 
 -- set the one status line when opening splits
--- vim.opt.laststatus = 3
+vim.opt.laststatus = 3
 
 -- Set the tab width
 vim.opt.tabstop = 4
@@ -93,4 +93,4 @@ vim.opt.termguicolors = true
 -- vim.opt.colorcolumn = "90"
 
 -- remove the commands input place
-vim.opt.cmdheight = 0
+-- vim.opt.cmdheight = 0
